@@ -8,27 +8,26 @@ html(lang='en')
     link(rel='icon', href='../../../../favicon.ico')
     title Jumbotron Template for Bootstrap
     // Bootstrap core CSS
-    link(href='../../../../dist/css/bootstrap.min.css', rel='stylesheet')
+    link(href='https://getbootstrap.com/dist/css/bootstrap.min.css', rel='stylesheet')
     // Custom styles for this template
     link(href='jumbotron.css', rel='stylesheet')
-    link(href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css", rel="stylesheet", integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u", crossorigin="anonymous")
-    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
     script(src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous")
     script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous")
+
   body
     nav.navbar.navbar-expand-md.navbar-dark.fixed-top.bg-dark
-      a.navbar-brand(href='#') Navbar
+      a.navbar-brand(href='/') Home
       button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarsExampleDefault', aria-controls='navbarsExampleDefault', aria-expanded='false', aria-label='Toggle navigation')
         span.navbar-toggler-icon
       #navbarsExampleDefault.collapse.navbar-collapse
         ul.navbar-nav.mr-auto
           li.nav-item.active
-            a.nav-link(href='#')
-              | Home
+            a.nav-link(href='/login')
+              | Login
               span.sr-only (current)
           li.nav-item
-            a.nav-link(href='#') Link
+            a.nav-link(href='/sign_up') Sign up
           li.nav-item
             a.nav-link.disabled(href='#') Disabled
           li.nav-item.dropdown
@@ -43,12 +42,12 @@ html(lang='en')
     main(role='main')
       // Main jumbotron for a primary marketing message or call to action
       .jumbotron
-        .container
-          h1.display-3 Hello, world!
-          p
-            | This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.
-          p
-            a.btn.btn-primary.btn-lg(href='#', role='button') Learn more »
+        image#main_page_image(src='/images/main_page.jpg', alt='image')
+          //h1.display-3 Hello, world!
+          //p
+          //  | This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.
+          //p
+          //  a.btn.btn-primary.btn-lg(href='#', role='button') Learn more »
       .container
         // Example row of columns
         .row
@@ -74,13 +73,4 @@ html(lang='en')
       // /container
     footer.container
       p © Company 2017
-    //
-      Bootstrap core JavaScript
-      ==================================================
-    // Placed at the end of the document so the pages load faster
-    script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js', integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN', crossorigin='anonymous')
-    script.
-        window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\\/script>')
-    script(src='../../../../assets/js/vendor/popper.min.js')
-    script(src='../../../../dist/js/bootstrap.min.js')
 

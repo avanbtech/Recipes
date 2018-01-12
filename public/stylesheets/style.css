@@ -10,3 +10,8 @@ a {
 body {
   padding-top: 3.5rem;
 }
+
+#main_page_image{
+  width: 100%;
+  height: auto;
+}
