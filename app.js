@@ -8,11 +8,20 @@ var flash = require('connect-flash');
 var session = require('express-session');
 var passport = require('passport');
 var expressValidator = require('express-validator');
+var mongoose = require('mongoose');
+var mongoDB = 'mongodb://localhost:27017/datingDB';
+var expressSanitizer = require('express-sanitizer');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
+
+//Connect database
+mongoose.connect(mongoDB, {useMongoclient: true});
+mongoose.Promise = global.Promise;
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'MongoDB connection error'));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -25,6 +34,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(expressSanitizer());
 
 //Express Session
 app.use(session({
