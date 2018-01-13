@@ -8,5 +8,5 @@ exports.user_login = function(req, res, next){
 };
 
 exports.user_signup = function(req, res, next){
-    res.render('sign-up');
+    res.render('sign_up');
 }
