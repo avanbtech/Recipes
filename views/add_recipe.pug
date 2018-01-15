@@ -1,0 +1,42 @@
+extends layout
+
+block content
+    .row
+        .col-sm-6
+            h2.page-header Recipe
+            if errors
+                each err in errors
+                    .alert.alert-danger #{err.msg}
+            form#recipe_form(method='post', action='/users/add_recipe')
+                .form-group
+                    label Title
+                    input.form-control(type='text', placeholder='Title', name='title', minlength="2" required)
+                .form-group
+                    label Level
+                    .form-group
+                        label Easy
+                        input.form-control(type='radio', name='level', value='easy' required)
+                    .form-group
+                        label Medium
+                        input.form-control(type='radio', name='level', value='medium' required)
+                    .form-group
+                        label Hard
+                        input.form-control(type='radio', name='level', value='hard' required)
+                .form-group
+                    label Ingredients
+                    input.form-control(type='text', placeholder='Ingredients', name='ingredients' required)
+                .form-group
+                    label Preparation
+                    textarea.form-control(type='text', placeholder='Preparation', name='preparation' required)
+                .form-group
+                    label Cooking time
+                    input.form-control(type='text', placeholder='Cooking time', name='cooking_time' required)
+                .form-group
+                    label Food Image
+                    input#file_path.form-control(type='file', placeholder='Image path', name='profileImage')
+                button.btn.btn-default(type='submit') Submit
+        .col-sm-6
+            img.recipe_image
+
+    hr
+    script  $("#register_form").validate();

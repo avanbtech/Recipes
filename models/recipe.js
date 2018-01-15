@@ -5,6 +5,7 @@ var RecipeSchema = mongoose.Schema({
     UserId: {type: Schema.ObjectId, ref: 'User'},
     title: {type: String},
     ingredients: {type: String},
+    preparation: {type: String},
     cooking_time: {type: String},
     difficulty: {type: String},
     image_path: {type: String},

@@ -53,7 +53,7 @@ exports.user_signup_post = function(req, res, next){
     }
     User.getUserByUsername(username, function(err, user){
        if(err)throw err;
-       if(user === undefined){
+       if(user === null){
            var newUser = new User({
                first_name: firstName,
                last_name: lastName,
@@ -75,6 +75,24 @@ exports.user_signup_post = function(req, res, next){
            res.redirect('/users/sign_up');
        }
     });
+};
+
+// Handle get request to get recipe form
+exports.user_add_recipe_get = function(req, res, next){
+    res.render('add_recipe');
+};
+
+// Handle post request to add recipe to database
+exports.user_add_recipe_post = function(req, res, next){
+    validate(req);
+
+    var title = req.body.title;
+    var level = req.body.title;
+    var ingredients = req.body.ingredients;
+    var preparation = req.body.preparation;
+    var cooking_time = req.body.cooking_time;
+    var image_path = req.body.title;
+    //TODO: start
 };
 
 passport.use(new LocalStrategy(

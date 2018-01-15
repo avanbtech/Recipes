@@ -14,4 +14,9 @@ router.get('/sign_up', userController.user_signup_get);
 
 router.post('/sign_up', userController.user_signup_post);
 
+router.get('/add_recipe', authentication.isLoggedIn, userController.user_add_recipe_get);
+
+router.post('/add_recipe', authentication.isLoggedIn, userController.user_add_recipe_post);
+
+
 module.exports = router;
