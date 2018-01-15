@@ -8,7 +8,7 @@ block content
             if errors
                 each err in errors
                     .alert.alert-danger #{err.msg}
-            form#register_form(method='post', action='/users/register')
+            form#register_form(method='post', action='/users/sign_up')
                 .form-group
                     label First Name
                     input.form-control(type='text', placeholder='First Name', name='firstName', minlength="2" required)
@@ -32,6 +32,5 @@ block content
                     input.form-control(type='password', placeholder='Password', name='password2' required)
                 button.btn.btn-default(type='submit') Submit
 
-            script(src='/js/register_validation')
             script  $("#register_form").validate();
         .col-sm-4
