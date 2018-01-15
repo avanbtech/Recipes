@@ -9,7 +9,7 @@ var session = require('express-session');
 var passport = require('passport');
 var expressValidator = require('express-validator');
 var mongoose = require('mongoose');
-var mongoDB = 'mongodb://localhost:27017/datingDB';
+var mongoDB = 'mongodb://localhost:27017/recipeDB';
 var expressSanitizer = require('express-sanitizer');
 
 var index = require('./routes/index');

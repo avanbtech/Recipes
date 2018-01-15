@@ -3,9 +3,12 @@ var Schema = mongoose.Schema;
 
 var RecipeSchema = mongoose.Schema({
     UserId: {type: Schema.ObjectId, ref: 'User'},
-    food_name: {type: String},
-    recipe: {type: String},
-    date: {type: Date}
+    title: {type: String},
+    ingredients: {type: String},
+    cooking_time: {type: String},
+    difficulty: {type: String},
+    image_path: {type: String},
+    posting_date: {type: Date}
 });
 
 var Recipe = module.exports = mongoose.model('Recipe', RecipeSchema);
